@@ -1,0 +1,8 @@
+@font-face {
+   font-family: 'graphb';
+   src: url('../fonts/GraphikLCG-Bold.woff2') format('wofft2'),
+        url('../fonts/GraphikLCG-Bold.woff') format('woff');
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+}

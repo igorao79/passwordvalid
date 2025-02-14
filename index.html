@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validator</title>
+    <link rel="icon" href="pics/igoric.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/null.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="page">
+        <div class="window">
+            <form id="passwordForm">
+                <label for="password">Введите пароль</label>
+                <input type="password" id="password" name="password" required/>
+                
+                <button type="submit" class="submit">Отправить</button>
+                
+                <div class="conditions">
+                    <span class="req" id="symb">Не менее 5 символов и не более 10</span>
+                    <span class="req" id="upper">Начинается с заглавной буквы</span>
+                    <span class="req" id="space">Не содержит пробелы</span>
+                    <span class="req" id="spec">Не содержит спецсимволы</span>
+                    <span class="req" id="repeat">Не содержит повторения</span>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+<script src="./script.js"></script>
+</body>
+</html>
