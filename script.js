@@ -2,11 +2,11 @@
 const savedPasswords = [];
 
 const conditions = [
-    { test: (password) => password.length >= 5 && password.length <= 10, element: document.getElementById('symb') },
-    { test: (password) => /^[A-ZА-Я]/.test(password), element: document.getElementById('upper') },
-    { test: (password) => !password.includes(' '), element: document.getElementById('space') },
-    { test: (password) => !/[^A-Za-zА-Яа-я0-9]/.test(password), element: document.getElementById('spec') },
-    { test: (password) => checkPassword(password), element: document.getElementById('repeat') }
+    { test: (password) => password.length >= 5 && password.length <= 10, element: document.querySelector('#symb') },
+    { test: (password) => /^[A-ZА-Я]/.test(password), element: document.querySelector('#upper') },
+    { test: (password) => !password.includes(' '), element: document.querySelector('#space') },
+    { test: (password) => !/[^A-Za-zА-Яа-я0-9]/.test(password), element: document.querySelector('#spec') },
+    { test: (password) => checkPassword(password), element: document.querySelector('#repeat') }
 ];
 
 function validatePassword(password) {
@@ -31,20 +31,20 @@ function checkPassword(password, limit = 3) {
 }
 
 // Динамическая проверка при вводе пароля
-document.getElementById("password").addEventListener("input", function() {
+document.querySelector("#password").addEventListener("input", function() {
     validatePassword(this.value);
 });
 
 // Проверка при отправке формы
-document.getElementById("passwordForm").addEventListener("submit", function(event) {
+document.querySelector("#passwordForm").addEventListener("submit", function(event) {
     event.preventDefault();
-    const passwordInput = document.getElementById("password");
+    const passwordInput = document.querySelector("#password");
     const password = passwordInput.value;
 
     if (validatePassword(password)) {
         // Добавляем пароль в массив
         savedPasswords.push(password);
-        console.log("Сохранённые пароли:", savedPasswords); // Выводим массив в консоль VS Code
+        console.log("Сохранённые пароли:", savedPasswords); // Выводим массив в консоль
 
         // Очищаем поле ввода
         passwordInput.value = "";
